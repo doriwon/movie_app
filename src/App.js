@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
+/* JSX & PROPS (function Component)
 const foodILike = [
   {
     id: 2,
@@ -53,7 +53,7 @@ Food.propTypes = {
 /*function renderFood(dish){
   console.log(dish);
   return <Food name={dish.name} picture={dish.image} />
-}*/
+}*
 
 function App() {
   return (
@@ -76,8 +76,43 @@ function App() {
     </div>
   );
 }
+*/
 
-class App extend React.Component{
-  x1
+/* Class Component */
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    console.log("mounting start");
+  }
+  state = {
+    count: 0
+  };
+  add = () => {
+    this.setState(csurrent => ({ count: csurrent.count + 1 }));
+    //새로운 state와 함께 render function을 호출
+  };
+  minus = () => {
+    this.setState(csurrent => ({ count: csurrent.count - 1 }));
+  };
+  componentDidMount(){
+    console.log("component rendered")
+  }
+  componentDidUpdate(){
+    console.log("just updated")
+  }
+  componentWillUnmount(){
+    console.log("Goodbye, the end")
+
+  }
+  render(){
+    console.log("rendering")
+    return (
+      <div>
+        <h1>The nuber is {this.state.count}</h1>
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
+      </div>
+    )
+  }
 }
 export default App;
