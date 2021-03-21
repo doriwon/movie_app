@@ -1,48 +1,7 @@
-* {
-    box-sizing: border-box;
- }
-body{
-    margin: 0;
-    padding: 0;
-    font-family: "Noto Sans", sans-serif;
-    background-color: #eff3f7;
-    height: 100%;
-}
-html,
-body,
-#potato,
-.container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.loader {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 300;
-}
-
-.movies {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 50px;
-  padding-top: 70px;
-  width: 80%;
-}
-
 .movies .movie {
-  width: 45%;
+  width: 48%;
   background-color: white;
   margin-bottom: 70px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   font-weight: 300;
   padding: 20px;
   border-radius: 5px;
@@ -51,7 +10,11 @@ body,
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 .movies a {
-  display: contents;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 .movie img {
   position: relative;
@@ -62,29 +25,76 @@ body,
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
-
 .movie .movie_title,
 .movie .movie_year {
   margin: 0;
   font-weight: 300;
 }
-
 .movie .movie_title {
   margin-bottom: 5px;
   font-size: 24px;
   color: #2c2c2c;
+  line-height: 1.2em;
+  font-weight: 500;
 }
-
 .movie .movie_genres {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   margin: 5px 0px;
 }
-
 .movie_genres li,
 .movie .movie_year {
   margin-right: 10px;
   font-size: 14px;
+}
+
+@media screen and (max-width: 1023px){
+  .movies .movie {
+    width: 100%;
+  }
+  .movies a {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .movies img {
+    margin: 0;
+  } 
+  .movie .movie_genres {
+    justify-content: center;
+  }
+  .movie .movie_data{
+    margin-top: -16px;
+  }
+}
+@media screen and (max-width: 640px){
+  .movies .movie {
+    margin-bottom: 24.21875vw;
+    padding: 3.125vw;
+  }
+  .movie img {
+    top: -15.625vw;
+    max-width: 45%;
+  }
+  .movie .movie_data{
+    margin-top: -8.75vw;
+  }
+  .movie .movie_title {
+    margin-bottom: 0.78125vw;
+    font-size: 4.6875vw;
+  }
+  .movie .movie_genres {
+    margin: 0.78125vw 0px;
+  }  
+  .movie_genres li,
+  .movie .movie_year {
+    margin: 0 0.78125vw;
+    font-size: 3.4375vw;
+  }
+  .movie .movie_summary{
+    font-size: 3.4375vw;
+  }
 }
